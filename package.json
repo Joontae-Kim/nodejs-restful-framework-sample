@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-sequelize-restful-framework-sample",
+  "version": "1.0.0",
+  "description": "it's a nodejs restful API sample framework using Sequelize, MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "supervisor ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joontae-Kim/nodejs-restful-framework-sample.git"
+  },
+  "keywords": [
+    "node.js",
+    "sequelize",
+    "restful",
+    "api"
+  ],
+  "author": "Joontae Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joontae-Kim/nodejs-restful-framework-sample/issues"
+  },
+  "homepage": "https://github.com/Joontae-Kim/nodejs-restful-framework-sample#readme",
+  "dependencies": {
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.0"
+  }
+}
