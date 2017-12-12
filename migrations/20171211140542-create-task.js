@@ -1,21 +1,31 @@
 'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: function (queryInterface, Sequelize) {
+    //define all columns in Tasks, including id, createdAt, and updatedAt as well as foreign keys (see ContextId)
     return queryInterface.createTable('Tasks', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       done: {
         type: Sequelize.BOOLEAN
       },
-      description: {
-        type: Sequelize.TEXT
+      ContextId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Contexts',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
